@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--下面做的是让侧滑返回不会变黑-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--上面做的是让侧滑返回不会变黑-->
     </style>
 
     <style name="AppTheme.NoActionBar">
