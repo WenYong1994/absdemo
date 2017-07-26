@@ -47,7 +47,6 @@ public class WySpinner extends LinearLayout {
         int resourceId = ta.getResourceId(R.styleable.WySpinner_entries, 0);
         float sipnner_hight = ta.getDimension(R.styleable.WySpinner_sipnner_hignt, 150);
         float sipnner_weight = ta.getDimension(R.styleable.WySpinner_sipnner_weight, 50);
-        ta.recycle();
         try {
             datas= getResources().getStringArray(resourceId);
         }catch (Exception e){
@@ -100,7 +99,6 @@ public class WySpinner extends LinearLayout {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.WySpinner);
         float text_hight = ta.getDimension(R.styleable.WySpinner_text_hight, 30);
         float text_weight = ta.getDimension(R.styleable.WySpinner_text_weight, 50);
-        ta.recycle();
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         layoutParams.height=DensityUtil.dip2px(context,text_hight);
         layoutParams.width=DensityUtil.dip2px(context,text_weight);
