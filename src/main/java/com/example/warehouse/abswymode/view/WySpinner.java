@@ -7,12 +7,14 @@ import android.support.v7.widget.ListPopupWindow;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.warehouse.abswymode.R;
+import com.example.warehouse.abswymode.utils.DensityUtil;
 
 /**
  * Created by Administrator on 2017/7/25.
@@ -23,6 +25,10 @@ public class WySpinner extends LinearLayout {
     TextView mTextView;
     String[] datas;
     ListPopupWindow mLpw;
+
+
+
+
 
     Context context;
 
@@ -39,6 +45,9 @@ public class WySpinner extends LinearLayout {
         this.context = context;
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.WySpinner);
         int resourceId = ta.getResourceId(R.styleable.WySpinner_entries, 0);
+        float sipnner_hight = ta.getDimension(R.styleable.WySpinner_sipnner_hignt, 150);
+        float sipnner_weight = ta.getDimension(R.styleable.WySpinner_sipnner_weight, 50);
+
         try {
             datas= getResources().getStringArray(resourceId);
         }catch (Exception e){
@@ -64,8 +73,9 @@ public class WySpinner extends LinearLayout {
             }
         });
         mLpw.setModal(true);
-        mLpw.setHeight(400);
-        mLpw.setWidth(300);
+        mLpw.setHeight(DensityUtil.dip2px(context,sipnner_hight));
+        mLpw.setWidth(DensityUtil.dip2px(context,sipnner_weight));
+
         mLpw.getListView();
         //mListView = mLpw.getListView();
     }
@@ -77,6 +87,8 @@ public class WySpinner extends LinearLayout {
             public void onClick(View v) {
                 if(mLpw!=null&&!mLpw.isShowing()){
                     mLpw.show();
+                }else if(mLpw!=null&&mLpw.isShowing()){
+                    mLpw.dismiss();
                 }
             }
         });
@@ -85,6 +97,13 @@ public class WySpinner extends LinearLayout {
 
     private void initView(Context context, AttributeSet attrs) {
         View view = LayoutInflater.from(context).inflate(R.layout.wy_spinner_view,this,false);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.WySpinner);
+        float text_hight = ta.getDimension(R.styleable.WySpinner_text_hight, 30);
+        float text_weight = ta.getDimension(R.styleable.WySpinner_text_weight, 50);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        layoutParams.height=DensityUtil.dip2px(context,text_hight);
+        layoutParams.width=DensityUtil.dip2px(context,text_weight);
+        view.setLayoutParams(layoutParams);
         addView(view);
         mTextView = (TextView) view.findViewById(R.id.m_text);
     }

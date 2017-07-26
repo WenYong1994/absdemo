@@ -3,5 +3,9 @@
     <declare-styleable name="WySpinner" >
         <attr name="text_background" format="color"></attr>
         <attr name="entries" format="reference"></attr>
+        <attr name="text_weight" format="dimension"/>
+        <attr name="text_hight" format="dimension"/>
+        <attr name="sipnner_weight" format="dimension"/>
+        <attr name="sipnner_hignt" format="dimension"/>
     </declare-styleable>
 </resources>
