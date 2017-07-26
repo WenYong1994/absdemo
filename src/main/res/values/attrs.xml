@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WySpinner" >
+        <attr name="text_background" format="color"></attr>
+        <attr name="entries" format="reference"></attr>
+    </declare-styleable>
+</resources>
