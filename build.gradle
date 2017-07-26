@@ -41,4 +41,9 @@ dependencies {
     //圆形的图片
     compile 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
+    //图片压缩算法
+    //compile 'top.zibin:Luban:1.1.2'
+    //模仿苹果3d滚动选择器
+    compile 'com.weigan:loopView:0.1.2'
+
 }
