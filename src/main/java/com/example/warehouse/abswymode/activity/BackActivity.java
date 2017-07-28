@@ -7,6 +7,7 @@ public abstract class BackActivity extends BaseBackActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(initView());
+        initData();
     }
 
     protected abstract int initView();
