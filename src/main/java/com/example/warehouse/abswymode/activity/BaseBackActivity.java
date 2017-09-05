@@ -26,6 +26,7 @@ public abstract class BaseBackActivity extends SwipeBackActivity {
 //            }
 //        };
 //    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         lifecycleSubject.onNext(ActivityLifeCycleEvent.CREATE);
