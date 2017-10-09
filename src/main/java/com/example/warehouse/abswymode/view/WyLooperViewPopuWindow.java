@@ -13,7 +13,7 @@ import com.example.warehouse.abswymode.utils.DensityUtil;
 import com.weigan.loopview.LoopView;
 import com.weigan.loopview.OnItemSelectedListener;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/9/5.
@@ -21,13 +21,13 @@ import java.util.ArrayList;
 
 public class WyLooperViewPopuWindow extends PopupWindow {
     Context context;
-    ArrayList<String> data;
+    List<String> data;
     LoopView mLoopView;
     TextView okTv;
     TextView cancleTv;
     int mindex;
     OnOkTvClickListener onOkTvClikListener;
-    public WyLooperViewPopuWindow(Context context, ArrayList<String> data) {
+    public WyLooperViewPopuWindow(Context context, List<String> data) {
         super(context);
         this.context = context;
         this.data = data;
